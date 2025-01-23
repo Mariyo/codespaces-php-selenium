@@ -29,3 +29,7 @@ Run following command to add composer dependency:
 ```bash
 make add dev=--dev package=testcontainers/testcontainers
 ```
+
+# Debugging
+
+Open Run and Debug side bar, select `Listen for XDebug` and start debugging.
