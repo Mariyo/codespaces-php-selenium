@@ -1,8 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+namespace Tests;
 
-class ExampleTest extends TestCase
+class ExampleTest extends BrowserTestCase
 {
     public function testExample()
     {

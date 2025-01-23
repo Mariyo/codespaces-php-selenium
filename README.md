@@ -21,3 +21,11 @@
     ```bash
     make test
     ```
+
+# Development
+
+Run following command to add composer dependency:
+
+```bash
+make add dev=--dev package=testcontainers/testcontainers
+```
