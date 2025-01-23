@@ -25,23 +25,17 @@ abstract class BrowserTestCase extends TestCase
         $chromeOptions = new ChromeOptions();
         $desiredCapabilities->setCapability(ChromeOptions::CAPABILITY, $chromeOptions);
 
-        // $this->expectOutputString('');
-        // var_dump($this->seleniumContainer->gethostname());
-        // exit;
+        // $this->webDriver = RemoteWebDriver::create(
+        //     'http://0.0.0.0:4444',
+        //     $desiredCapabilities
+        // );
 
-        // sleep(60);
-
-        $this->webDriver = RemoteWebDriver::create(
-            'http://0.0.0.0:4444',
-            $desiredCapabilities
-        );
-
-        $this->webDriver->manage()->window()->maximize();
+        // $this->webDriver->manage()->window()->maximize();
     }
 
     public function tearDown(): void
     {
-        $this->webDriver->quit();
+        // $this->webDriver->quit();
         $this->seleniumContainer->stop();
     }
 }
