@@ -4,8 +4,8 @@ require __DIR__ . '/../vendor/autoload.php';
 use Slim\Factory\AppFactory;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7Server\ServerRequestCreator;
-use Nyholm\Psr7Server\ServerRequestCreatorFactory;
 
+phpinfo();
 $psr17Factory = new Psr17Factory();
 AppFactory::setResponseFactory($psr17Factory);
 
