@@ -12,4 +12,15 @@ start:
 
 # Run PHPUnit tests
 test:
-	vendor/bin/phpunit tests
+	docker compose -f infra/docker-compose.yml exec webserver ./vendor/bin/phpunit tests
+
+# Run Docker Compose
+compose:
+	docker compose -f infra/docker-compose.yml up -d --remove-orphans --wait --build
+
+# Stop Docker Compose
+stop:
+	docker compose -f infra/docker-compose.yml down
+
+inspect-webserver:
+	docker compose -f infra/docker-compose.yml exec webserver bash

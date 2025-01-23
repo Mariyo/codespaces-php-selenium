@@ -1,0 +1,19 @@
+services:
+
+  webserver:
+    build: apache
+    network_mode: bridge
+    ports:
+      - "8080:80"
+    volumes:
+      - ./xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ../:/var/www
+      - /workspaces:/workspaces
+    working_dir: /var/www
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  chrome:
+    network_mode: host
+    image: selenium/standalone-chrome:129.0
+    shm_size: 2gb
