@@ -12,9 +12,9 @@ start:
 stop:
 	$(COMPOSE_CMD) down
 
-# Run PHPUnit tests
-test:
-	$(WEBSERVER_EXEC) ./vendor/bin/phpunit tests
+# Run feedback tests with custom attributes
+feedback:
+	$(WEBSERVER_EXEC) ./vendor/bin/phpunit tests --colors=always --testdox
 
 inspect-webserver:
 	$(WEBSERVER_EXEC) bash

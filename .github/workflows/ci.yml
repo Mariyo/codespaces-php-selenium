@@ -26,5 +26,5 @@ jobs:
       - name: Setup
         run: make setup
 
-      - name: Run tests
-        run: make test
+      - name: Run feedback tests
+        run: make feedback

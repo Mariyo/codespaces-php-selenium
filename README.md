@@ -30,10 +30,10 @@ Open Run and Debug side bar, select `Listen for XDebug` and start debugging.
 
 To see the browser in Codespaces via VNC, open: https://CODESPACE-HOST-ON-PORT-7900.app.github.dev?autoconnect=1&resize=scale&password=secret
 
-## Run tests
+## Get feedback from tests
 
 Run the following command to run the tests:
 
 ```bash
-make test
+make feedback
 ```
