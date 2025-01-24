@@ -6,7 +6,7 @@ COMPOSER_CMD = docker run --rm -v $(shell pwd):/app composer
 # Start application
 start:
 	$(COMPOSE_CMD) up -d --remove-orphans --wait
-	$(WEBSERVER_EXEC_DETACH) php -S 0.0.0.0:8000 -t html
+	$(WEBSERVER_EXEC_DETACH) php -S 0.0.0.0:8000 -t public
 
 # Stop application
 stop:
