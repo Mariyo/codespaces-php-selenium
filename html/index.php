@@ -20,7 +20,7 @@ $serverRequest = $creator->fromGlobals();
 $app = AppFactory::create();
 
 $app->get('/', function ($request, $response, $args) {
-    $response->getBody()->write("Hello, world!");
+    $response->getBody()->write("<h1>Hello, world!</h1>");
     return $response;
 });
 

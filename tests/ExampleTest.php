@@ -2,10 +2,17 @@
 
 namespace Tests;
 
+use function PHPUnit\Framework\assertEquals;
+
 class ExampleTest extends BrowserTestCase
 {
-    public function testExample()
+    public function testHelloWorld()
     {
-        $this->assertTrue(true);
+        $this->open('/');
+
+        assertEquals(
+            'Hello, world!',
+            $this->getElement("h1")->getText()
+        );
     }
 }
