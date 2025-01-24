@@ -24,13 +24,10 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install dependencies
-        run: make install
-
-      - name: Install dependencies
-        run: make install
+        run: make composer install
       
       - name: Run infra
-        run: make compose
+        run: make start
 
       - name: Run tests
         run: make test

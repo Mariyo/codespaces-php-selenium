@@ -1,26 +1,32 @@
-# Install composer dependencies
-install:
-	docker run --rm -v $(shell pwd):/app composer update
-
-# Add dependency
-add:
-	docker run --rm -v $(shell pwd):/app composer require $(dev) $(package)
+COMPOSE_CMD = docker compose -f infra/docker-compose.yml
+WEBSERVER_EXEC = $(COMPOSE_CMD) exec webserver
+COMPOSER_CMD = docker run --rm -v $(shell pwd):/app composer
 
 # Start application
 start:
-	php -d display_errors=1 -S localhost:8000 -dxdebug.mode=develop,debug -dxdebug.discover_client_host=1 -t public
+	$(COMPOSE_CMD) up -d --remove-orphans --wait
+	$(WEBSERVER_EXEC) php -S 0.0.0.0:8000 -t html
+
+# Stop application
+stop:
+	$(COMPOSE_CMD) down
 
 # Run PHPUnit tests
 test:
-	docker compose -f infra/docker-compose.yml exec webserver ./vendor/bin/phpunit tests
-
-# Run Docker Compose
-compose:
-	docker compose -f infra/docker-compose.yml up -d --remove-orphans --wait --build
-
-# Stop Docker Compose
-stop:
-	docker compose -f infra/docker-compose.yml down
+	$(WEBSERVER_EXEC) ./vendor/bin/phpunit tests
 
 inspect-webserver:
-	docker compose -f infra/docker-compose.yml exec webserver bash
+	$(WEBSERVER_EXEC) bash
+
+build-php-image:
+	docker build -t mariyo/php:8.2-apache-dev -f infra/apache/Dockerfile .
+	docker login docker.io -u mariyo
+	docker image push mariyo/php:8.2-apache-dev
+
+# Run Composer with arguments
+composer:
+	$(COMPOSER_CMD) $(filter-out $@,$(MAKECMDGOALS))
+
+# Prevent make from interpreting arguments as targets
+%:
+	@:

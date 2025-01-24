@@ -5,7 +5,6 @@ use Slim\Factory\AppFactory;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7Server\ServerRequestCreator;
 
-phpinfo();
 $psr17Factory = new Psr17Factory();
 AppFactory::setResponseFactory($psr17Factory);
 

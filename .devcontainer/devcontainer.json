@@ -1,6 +1,6 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "postCreateCommand": "pecl install xdebug && docker-php-ext-enable xdebug",
+  "postCreateCommand": "make install && make start",
   "mounts": [
     "source=${localWorkspaceFolder}/infra/xdebug.ini,target=/opt/php/8.2.14/ini/xdebug.ini,type=bind"
   ]

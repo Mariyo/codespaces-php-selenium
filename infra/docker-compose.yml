@@ -1,14 +1,12 @@
 services:
 
   webserver:
-    build: apache
+    image: mariyo/php:8.2-apache-dev
     network_mode: bridge
     ports:
-      - "8080:80"
+      - "8000:8000"
     volumes:
-      - ./xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
       - ../:/var/www
-      - /workspaces:/workspaces
     working_dir: /var/www
     extra_hosts:
       - "host.docker.internal:host-gateway"
