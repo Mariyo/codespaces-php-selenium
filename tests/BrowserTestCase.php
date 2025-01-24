@@ -36,6 +36,6 @@ abstract class BrowserTestCase extends TestCase
 
     protected function open(string $path): void
     {
-        $this->driver->get("http://localhost:8000$path");
+        $this->driver->get("http://webserver:8000$path");
     }
 }

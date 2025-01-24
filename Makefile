@@ -19,6 +19,9 @@ test:
 inspect-webserver:
 	$(WEBSERVER_EXEC) bash
 
+inspect-chrome:
+	$(COMPOSE_CMD) exec chrome bash
+
 build-php-image:
 	docker build -t mariyo/php:8.2-apache-dev -f infra/apache/Dockerfile .
 	docker login docker.io -u mariyo
