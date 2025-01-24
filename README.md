@@ -28,7 +28,7 @@ make composer require --dev testcontainers/testcontainers
 
 Open Run and Debug side bar, select `Listen for XDebug` and start debugging.
 
-To see the browser in Codespaces via VNC, open: https://CODESPACE-HOST-ON-PORT-7900.app.github.dev?autoconnect=1&resize=scale&password=secret
+To see the Selenium Chrome browser in Codespaces via VNC, open: https://CODESPACE-HOST-ON-PORT-7900.app.github.dev?autoconnect=1&resize=scale&password=secret
 
 ## Get feedback from tests
 
