@@ -23,16 +23,8 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: Cache Docker images
-        uses: ScribeMD/docker-cache@0.5.0
-        with:
-          key: docker-${{ runner.os }}-${{ hashFiles('**/docker-compose.yml') }}
-
-      - name: Install dependencies
-        run: make composer install
-      
-      - name: Run infra
-        run: make start
+      - name: Setup
+        run: make setup
 
       - name: Run tests
         run: make test
