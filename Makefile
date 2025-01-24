@@ -31,6 +31,11 @@ build-php-image:
 composer:
 	$(COMPOSER_CMD) $(filter-out $@,$(MAKECMDGOALS))
 
+# Setup project
+setup:
+	make composer install
+	make start
+
 # Prevent make from interpreting arguments as targets
 %:
 	@:
