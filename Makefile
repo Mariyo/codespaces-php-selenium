@@ -1,11 +1,12 @@
 COMPOSE_CMD = docker compose -f infra/docker-compose.yml
 WEBSERVER_EXEC = $(COMPOSE_CMD) exec webserver
+WEBSERVER_EXEC_DETACH = $(COMPOSE_CMD) exec -d webserver
 COMPOSER_CMD = docker run --rm -v $(shell pwd):/app composer
 
 # Start application
 start:
 	$(COMPOSE_CMD) up -d --remove-orphans --wait
-	$(WEBSERVER_EXEC) php -S 0.0.0.0:8000 -t html
+	$(WEBSERVER_EXEC_DETACH) php -S 0.0.0.0:8000 -t html
 
 # Stop application
 stop:
