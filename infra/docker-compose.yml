@@ -13,5 +13,5 @@ services:
 
   chrome:
     network_mode: host
-    image: selenium/standalone-chrome:132
+    image: selenium/standalone-chrome:132.0
     shm_size: 2gb
