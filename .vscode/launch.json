@@ -11,7 +11,7 @@
       "port": 9003,
       // "stopOnEntry": true,
       "pathMappings": {
-        "/var/www/": "${workspaceFolder}"
+        "/var/www/html": "${workspaceFolder}"
       }
     }
   ]

@@ -30,6 +30,8 @@ Run following command to add composer dependency:
 make add dev=--dev package=testcontainers/testcontainers
 ```
 
-# Debugging
+## Debugging
 
 Open Run and Debug side bar, select `Listen for XDebug` and start debugging.
+
+Open https://friendly-goggles-4q7pp7w6pwc5r9-7900.app.github.dev?autoconnect=1&resize=scale&password=secret to see browser.
