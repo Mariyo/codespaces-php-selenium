@@ -33,8 +33,8 @@ composer:
 
 # Setup project
 setup:
-	make composer install
-	make start
+	$(MAKE) composer install
+	$(MAKE) start
 
 # Prevent make from interpreting arguments as targets
 %:
